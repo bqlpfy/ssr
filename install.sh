@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # 默认配置
-DOWNLOAD_URL="https://github.com/example/ssserver/releases/download/v1.0.0/ssserver"  # 替换为实际下载地址
+DOWNLOAD_URL="https://raw.githubusercontent.com/bqlpfy/ssr/refs/heads/master/ssserver"
 DEFAULT_PASSWORD="Z6dcK1YS0BXW"
-DEFAULT_PORT="15371"
+DEFAULT_PORT="15370"
 BINARY_NAME="ssserver"
 INSTALL_DIR="/usr/local/bin"
 SERVICE_NAME="ssserver"
