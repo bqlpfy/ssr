@@ -35,9 +35,6 @@ sysctl -w net.ipv4.ip_forward=1
 
 iptables-save | grep -v "$SCRIPT_TAG" | iptables-restore
 
-iptables -I INPUT -p tcp --dport $PORT_START:$PORT_END -j ACCEPT -m comment --comment "$SCRIPT_TAG"
-iptables -I INPUT -p udp --dport $PORT_START:$PORT_END -j ACCEPT -m comment --comment "$SCRIPT_TAG"
-
 iptables -t nat -A PREROUTING -p tcp --dport $PORT_START:$PORT_END -j DNAT --to-destination $B_IP -m comment --comment "$SCRIPT_TAG"
 iptables -t nat -A POSTROUTING -p tcp -d $B_IP --dport $PORT_START:$PORT_END -j MASQUERADE -m comment --comment "$SCRIPT_TAG"
 iptables -t nat -A PREROUTING -p udp --dport $PORT_START:$PORT_END -j DNAT --to-destination $B_IP -m comment --comment "$SCRIPT_TAG"
